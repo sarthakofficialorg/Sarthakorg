@@ -1,0 +1,6 @@
+{
+  "name": "SARTHAK NGO",
+  "description": "Official website and admin portal for SARTHAK, a non-governmental organization dedicated to helping others and changing lives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

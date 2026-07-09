@@ -1,0 +1,68 @@
+{
+  "entities": {
+    "Activity": {
+      "title": "Activity",
+      "description": "Represents an NGO activity, project, or drive conducted by Sarthak.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The title of the activity" },
+        "description": { "type": "string", "description": "A brief overview description of the activity" },
+        "details": { "type": "string", "description": "Detailed multi-paragraph description of the activity" },
+        "imageUrl": { "type": "string", "description": "The cover image URL for the activity" },
+        "imageUrls": { 
+          "type": "array", 
+          "items": { "type": "string" }, 
+          "description": "List of gallery images for the auto-changing slideshow" 
+        },
+        "category": { "type": "string", "description": "The category, e.g., Education, Food Relief, Healthcare" },
+        "date": { "type": "string", "description": "The date the activity was conducted" },
+        "location": { "type": "string", "description": "Where the activity took place" },
+        "goalReached": { "type": "string", "description": "A highlight badge representing target impact reached" },
+        "createdAt": { "type": "string", "description": "ISO timestamp of when this document was created" }
+      },
+      "required": ["title", "description", "category", "date", "location"]
+    },
+    "JoinSubmission": {
+      "title": "JoinSubmission",
+      "description": "Represents a form submission from a user wishing to join Sarthak as a volunteer.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string" },
+        "message": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      },
+      "required": ["name", "email", "phone", "role"]
+    },
+    "ContactSubmission": {
+      "title": "ContactSubmission",
+      "description": "Represents a standard contact form message submitted on the website.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "submittedAt": { "type": "string" }
+      },
+      "required": ["name", "email", "phone", "subject", "message"]
+    }
+  },
+  "firestore": {
+    "activities": {
+      "schema": "Activity",
+      "description": "Public and admin-managed records of NGO activities."
+    },
+    "join_submissions": {
+      "schema": "JoinSubmission",
+      "description": "Volunteer application submissions, managed by admins."
+    },
+    "contact_submissions": {
+      "schema": "ContactSubmission",
+      "description": "General user contact and query submissions, managed by admins."
+    }
+  }
+}
